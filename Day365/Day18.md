@@ -24,9 +24,10 @@
 ## 简写
 
 `this` 的确定由 执行上下文决定。
-函数直接执行时，`this`指向`global`严格模式下指向`undefined`。
-函数被当作对象方法调用时，`this`指向调用它的对象。
-函数被`call`,`apply`,`bind`调用时，`this`为其绑定值。
-函数被 `new` 调用时，`this` 指向 `new` 左侧变量。
-箭头函数没有`this` ,其`this`是闭包其父级`this`。
-一些特殊的方法可能会修改`this`值，如`vue`,`addEventListener`
+
+- 函数直接执行时，`this`指向`global`严格模式下指向`undefined`。
+- 函数被当作对象方法调用时，`this`指向调用它的对象。
+- 函数被`call`,`apply`,`bind`调用时，`this`为其绑定值。
+- 函数被 `new` 调用时，`this` 指向 `new` 左侧变量。
+- 箭头函数没有`this` ,其`this`是闭包其父级`this`。
+- 一些特殊的方法可能会修改`this`值，如`vue`,`addEventListener`
