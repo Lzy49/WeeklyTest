@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      'use strict';
+      var btn = document.createElement('button');
+      var t = document.createTextNode('Click Me');
+      btn.appendChild(t);
+      function createCallback(fn) {
+        return () => fn.apply();
+      }
+      const obj = { v: 10 };
+      obj.handleClick = () => {
+        console.log(this);
+      };
+      btn.addEventListener('click', obj.handleClick);
+      document.getElementById('root').appendChild(btn);
+    </script>
+  </body>
+</html>
