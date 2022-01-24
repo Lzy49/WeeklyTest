@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="wrap">
+      <!-- 测试 -->
+      <div id="text">123</div>
+    </div>
+    <div id="none" style="display: none"><span>none</span></div>
+    <script>
+      const div = document.querySelector('#wrap');
+      // 两者一个是 div 节点 ，一个是 文字节点。
+      console.log(div.childNodes[0], div.childNodes[0].nodeValue); // 这个节点是 回车 所以是个空
+      console.log(div.childNodes[1], div.childNodes[1].nodeValue); // 这个节点是 注释 所以可以展示值。
+      console.log(div.childNodes[2], div.childNodes[2].nodeValue); // 这个节点是 回车 所以是个空
+      console.log(div.childNodes[3], div.childNodes[3].nodeValue); // 这个节点是 节点 所以是 null
+      console.log(div.childNodes[4], div.childNodes[4].nodeValue); // 这个节点是 回车 所以是个空
+      console.log(
+        div.childNodes[3].childNodes[0],
+        div.childNodes[3].childNodes[0].nodeValue
+      ); // 这个文字节点是 回车 所以是 123
+      console.log(div.childNodes[3].innerHTML); // 123 可以获取到 inner 文字
+      console.log(div.childNodes[3].innerText); // 123 可以获取到 inner 文字
+      console.log(document.getElementById('none').innerHTML); // 获取值与 node 节点
+      console.log(document.getElementById('none').innerText); // 仅获取值。
+      console.log(document.getElementById('none').textContent); // 空 ， 该标签只能获取 默认值。
+      console.log(document.getElementById('text').textContent); // 123
+    </script>
+  </body>
+</html>
